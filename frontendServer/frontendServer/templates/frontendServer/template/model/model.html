@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Модель</title>
+    <link rel="stylesheet" href="../../../../static/frontendServer/static/css/model.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<button id="backToIndex" onclick="window.location.href='../index.html' "><i class="fa-solid fa-house"></i></button>
+
+
+<div class="container">
+
+    <div id="tableContainer">
+        <table class="table" border="1" cellpadding="4" cellspacing="0">
+            <thead>
+            <tr>
+                <th rowspan="2">Дата</th>
+                <th colspan="2">Модель</th>
+                <th colspan="2">Реальность</th>
+                <th rowspan="2">Разница</th>
+            </tr>
+            <tr>
+                <th>Сумма</th>
+                <th>Финансовые операции</th>
+                <th>Сумма</th>
+                <th>Комментарий</th>
+            </tr>
+            </thead>
+            <tbody id="tableBody">
+            <!-- Данные будут вставлены сюда -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="controlPanel">
+        <!-- Кнопка "Добавить реальную сумму" -->
+        <button id="addRealAmountButton">Добавить реальную сумму</button><br>
+        <!-- Модальное окно для добавления реальной суммы -->
+        <div id="expenseModal" style="display: none;">
+            <form id="expenseForm">
+                <label for="expenseDate" autocomplete="off"></label>
+                <input type="date" id="expenseDate" required placeholder="гггг-мм-дд"><br>
+
+                <label for="expenseAmount"></label>
+                <input type="text" id="expenseAmount" required placeholder="Сумма"><br>
+
+                <label for="expenseComment"></label>
+                <input type="text" id="expenseComment" required placeholder="Комментарий"><br>
+
+                <button type="submit" id="saveRealAmount">Сохранить</button>
+            </form>
+        </div>
+
+        <!-- Кнопка "Доходы" -->
+        <button id="profitsButton">Доходы</button>
+
+        <!-- Кнопка "Расходы" -->
+        <button id="expensesButton">Расходы</button>
+    </div>
+
+</div>
+
+
+<script>
+    document.getElementById('profitsButton').addEventListener('click', function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        // const token = urlParams.get('token');
+
+        const modelId = urlParams.get('id');
+
+        // Перенаправление на страницу profits.html с параметром id
+        window.location.href = `profits.html?id=${modelId}`
+    })
+
+    document.getElementById('expensesButton').addEventListener('click', function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        // const token = urlParams.get('token');
+        const modelId = urlParams.get('id');
+
+        // Перенаправление на страницу profits.html с параметром id
+        window.location.href = `expenses.html?id=${modelId}`
+    })
+</script>
+<script src="../../../../static/frontendServer/static/js/model/fill_table.js"></script>
+<script src="../../../../static/frontendServer/static/js/model/update_realAmount.js"></script>
+<script src="../../../../static/frontendServer/static/js/utils.js"></script>
+</body>
+</html>

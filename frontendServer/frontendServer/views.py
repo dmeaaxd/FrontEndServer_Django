@@ -1,0 +1,13 @@
+from django.shortcuts import render
+
+
+def login(request):
+    return render(request, 'frontendServer/template/auth/login.html')
+
+
+def reg(request):
+    return render(request, 'frontendServer/template/auth/register.html')
+
+
+def main(request):
+    return render(request, 'frontendServer/template/index.html')
