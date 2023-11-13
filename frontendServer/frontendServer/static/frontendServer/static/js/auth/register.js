@@ -4,7 +4,7 @@ document.getElementById('registerForm').addEventListener('submit', function (e) 
     const regPassword1 = document.getElementById('regPassword1').value;
     const regPassword2 = document.getElementById('regPassword2').value;
 
-    axios.post('http://127.0.0.1:8000/users/graphql', {
+    axios.post(serverURL + '/users/graphql', {
         query: `
                 mutation {
                     register(username: "${regUsername}", password1: "${regPassword1}", password2: "${regPassword2}") {

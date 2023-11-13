@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-<button id="backToIndex" onclick="window.location.href='../index.html' "><i class="fa-solid fa-house"></i></button>
+<button id="backToIndex" onclick="window.location.replace('main')"><i class="fa-solid fa-house"></i></button>
 
 
 <div class="container">
@@ -28,9 +28,7 @@
                 <th>Комментарий</th>
             </tr>
             </thead>
-            <tbody id="tableBody">
-            <!-- Данные будут вставлены сюда -->
-            </tbody>
+            <tbody id="tableBody"></tbody>
         </table>
     </div>
 
@@ -71,7 +69,7 @@
         const modelId = urlParams.get('id');
 
         // Перенаправление на страницу profits.html с параметром id
-        window.location.href = `profits.html?id=${modelId}`
+        window.location.replace(`profits?id=${modelId}`);
     })
 
     document.getElementById('expensesButton').addEventListener('click', function () {
@@ -80,11 +78,14 @@
         const modelId = urlParams.get('id');
 
         // Перенаправление на страницу profits.html с параметром id
-        window.location.href = `expenses.html?id=${modelId}`
+        window.location.replace(`expenses?id=${modelId}`);
     })
 </script>
+
+<script src="../../../../static/frontendServer/static/js/serverURL.js"></script>
 <script src="../../../../static/frontendServer/static/js/model/fill_table.js"></script>
 <script src="../../../../static/frontendServer/static/js/model/update_realAmount.js"></script>
 <script src="../../../../static/frontendServer/static/js/utils.js"></script>
+
 </body>
 </html>

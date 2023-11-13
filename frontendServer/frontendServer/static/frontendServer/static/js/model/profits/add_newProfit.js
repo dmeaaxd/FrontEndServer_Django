@@ -32,7 +32,7 @@ $(document).ready(function(){
 
 
 
-                fetch('http://127.0.0.1:8000/finance/profits', {
+                fetch(serverURL + '/finance/profits', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -81,7 +81,7 @@ $(document).ready(function(){
 
 
 
-                fetch('http://127.0.0.1:8000/finance/profits', {
+                fetch(serverURL + '/finance/profits', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -140,7 +140,7 @@ $(document).ready(function(){
 
 
 
-                fetch('http://127.0.0.1:8000/finance/profits', {
+                fetch(serverURL + '/finance/profits', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

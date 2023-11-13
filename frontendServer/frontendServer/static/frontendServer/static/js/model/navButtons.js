@@ -1,5 +1,5 @@
 function backToModel() {
-    window.location.href=`model.html?id=${modelId}`;
+    window.location.replace(`model?id=${modelId}`);
 }
 
 const backToModelButton = document.getElementById('backToModel');

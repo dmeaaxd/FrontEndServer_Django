@@ -8,7 +8,7 @@ token = sessionStorage.getItem('token');
 // Проверка, есть ли токен в URL
 if (token) {
     // Выполнение запроса GraphQL с использованием токена
-    fetch('http://127.0.0.1:8000/users/graphql', {
+    fetch(serverURL + '/users/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ if (token) {
                 goToModelButton.id = 'goToModelButton';
                 goToModelButton.textContent = 'Перейти в модель';
                 goToModelButton.addEventListener('click', function () {
-                    window.location.href = `model/model.html?id=${model.id}`;
+                    window.location.replace(`model?id=${model.id}`);
                 });
 
 
@@ -99,7 +99,7 @@ if (token) {
                             const newStartDate = newEditForm.querySelector('#editModelStartDate').value;
                             const newFinishDate = newEditForm.querySelector('#editModelFinishDate').value;
 
-                            fetch('http://127.0.0.1:8000/finance/models', {
+                            fetch(serverURL + '/finance/models', {
                                 method: 'POST',
                                 headers: {
                                     'Content-Type': 'application/json',
@@ -142,7 +142,7 @@ if (token) {
 
                     if (shouldDelete) {
 
-                        fetch('http://127.0.0.1:8000/finance/models', {
+                        fetch(serverURL + '/finance/models', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
@@ -197,7 +197,7 @@ if (token) {
         const newModelFinishDate = document.getElementById('newModelFinishDate').value;
 
         // Выполнение запроса GraphQL для создания модели
-        fetch('http://127.0.0.1:8000/finance/models', {
+        fetch(serverURL + '/finance/models', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -230,5 +230,5 @@ if (token) {
 
 } else {
     // document.getElementById('userData').textContent = '';
-    window.location.href = 'login';
+    window.location.replace('login');
 }

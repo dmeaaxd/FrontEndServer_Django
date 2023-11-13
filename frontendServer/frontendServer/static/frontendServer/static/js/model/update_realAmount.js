@@ -17,7 +17,7 @@ document.getElementById('expenseForm').addEventListener('submit', (e) => {
     const expenseComment = document.getElementById('expenseComment').value;
 
     // Отправка запроса на сервер для добавления расхода
-    fetch('http://127.0.0.1:8000/finance/dates', {
+    fetch(serverURL + '/finance/dates', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

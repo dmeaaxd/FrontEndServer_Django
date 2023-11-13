@@ -9,7 +9,7 @@ const modelId = urlParams.get('id');
 
 
 if (modelId) {
-    fetch('http://127.0.0.1:8000/finance/expenses', {
+    fetch(serverURL + '/finance/expenses', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ if (modelId) {
                 deleteButton.textContent = "Удалить";
                 deleteButton.id = 'deleteButton';
                 deleteButton.addEventListener("click", () => {
-                    fetch('http://127.0.0.1:8000/finance/expenses', {
+                    fetch(serverURL + '/finance/expenses', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -123,7 +123,7 @@ if (modelId) {
                             const formFDate = document.getElementById('custom_finishDate').value;
                             const formReplayDays = document.getElementById('custom_replayDays').value;
 
-                            fetch('http://127.0.0.1:8000/finance/expenses', {
+                            fetch(serverURL + '/finance/expenses', {
                                 method: 'POST',
                                 headers: {
                                     'Content-Type': 'application/json',
@@ -179,7 +179,7 @@ if (modelId) {
                             const formName = document.getElementById('withoutRepeats_name').value;
                             const formSDate = document.getElementById('withoutRepeats_startDate').value;
 
-                            fetch('http://127.0.0.1:8000/finance/expenses', {
+                            fetch(serverURL + '/finance/expenses', {
                                 method: 'POST',
                                 headers: {
                                     'Content-Type': 'application/json',
@@ -238,7 +238,7 @@ if (modelId) {
                             const formSDate = document.getElementById('everyDMY_startDate').value;
                             const formFDate = document.getElementById('everyDMY_finishDate').value;
 
-                            fetch('http://127.0.0.1:8000/finance/expenses', {
+                            fetch(serverURL + '/finance/expenses', {
                                 method: 'POST',
                                 headers: {
                                     'Content-Type': 'application/json',

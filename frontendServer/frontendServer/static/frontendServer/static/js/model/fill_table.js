@@ -8,7 +8,7 @@ token = sessionStorage.getItem('token');
 
 
 if (id) {
-    fetch('http://127.0.0.1:8000/finance/dates', {
+    fetch(serverURL + '/finance/dates', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

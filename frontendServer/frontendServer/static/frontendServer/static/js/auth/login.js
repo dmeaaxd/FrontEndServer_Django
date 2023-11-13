@@ -4,7 +4,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    axios.post('http://127.0.0.1:8000/users/graphql', {
+    axios.post(serverURL + '/users/graphql', {
         query: `
             mutation {
                 tokenAuth(username: "${username}", password: "${password}") {
@@ -20,10 +20,8 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
                 const token = data.token;
                 sessionStorage.setItem('token', token);
 
-                // window.location.replace(PAGE_URL);
+                window.location.replace('main');
 
-                const hideButton = document.getElementById('goToModelHide');
-                hideButton.click();
 
             } else {
                 document.getElementById('error').textContent = 'Ошибка авторизации';
